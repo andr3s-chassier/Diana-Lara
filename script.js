@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             precioTotal.textContent = '$ ' + total.toLocaleString('es-MX') + ' MXN';
         });
     }
-    
+
     // --- SCRIPT DE L'ACCORDÉON FAQ ---
     const faqItems = document.querySelectorAll('.faq-item');
     
@@ -66,5 +66,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.classList.toggle('open');
             });
         }
+    });
+
+    // --- SCRIPT FORMULARIO ASUNTO (Boutons Clases / Eventos) ---
+    const toggleBtns = document.querySelectorAll('.toggle-btn');
+    const asuntoInput = document.getElementById('asunto-input');
+    // On cible tous les liens qui dirigent vers la section #contacto
+    const contactLinks = document.querySelectorAll('a[href="#contacto"]');
+
+    // Fonction pour changer visuellement le bouton actif et la valeur cachée
+    function setAsunto(value) {
+        if (!asuntoInput) return;
+        asuntoInput.value = value;
+        
+        toggleBtns.forEach(btn => {
+            if(btn.dataset.value === value) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    // Changement manuel en cliquant directement sur les boutons du formulaire
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            setAsunto(btn.dataset.value);
+        });
+    });
+
+    // Présélection automatique en cliquant sur un bouton d'appel à l'action
+    contactLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const subject = link.dataset.subject;
+            if(subject) {
+                setAsunto(subject);
+            }
+        });
     });
 });
