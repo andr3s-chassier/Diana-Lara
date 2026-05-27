@@ -6,22 +6,37 @@
     <title>Sobre Mí - Diana Lara Soprano</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="style_optimized.css">
+
 </head>
 <body>
-
+    <!-- Lecteur Audio Global -->
+    <audio id="voz-audio" loop>
+        <source src="audios/audio_fondo.mp3" type="audio/mpeg">
+    </audio>
     <header>
         <a href="index.html" class="logo">Diana Lara</a>
-        <nav>
-            <a href="sobre-mi.html">Sobre mi</a>
+        <nav id="main-nav" style="display: flex; align-items: center;">
+            <button id="audio-toggle-header" class="audio-toggle hidden-audio-btn">
+                <img src="img/pausa.png" alt="pausa" class="audio-icon-img">
+            </button>
+            <a href="sobre-mi.html" class="nav-active">Sobre mí</a>
             <a href="servicios.html">Servicios</a>
             <a href="detalles-clases.html">Clases</a>
-            <a href="index.html#mi-voz">Mi voz</a>
+            <a href="mi-voz.html">Mi voz</a>
             <a href="index.html#contacto" id="contact-btn">Contáctame</a>
         </nav>
+
+        <button id="burger-menu-btn" class="burger-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
-    <section class="container" style="padding-top: 60px;">
+    <section class="container" style="padding-top: 160px;">
         <div class="container reveal" style="text-align: center; margin: 0 0 10vh;">
             <span class="accent-text" style="font-size: 3rem;">Conóceme</span>
             <h1 style="font-size: 3.5rem; color: var(--color-bordeaux);">Diana Lara</h1>
@@ -37,6 +52,9 @@
                 <h2>Mi Historia</h2>
                 <p>Originaria de Tehuacán, Puebla, el canto ha sido el motor de mi vida. Actualmente busco una formación integral cursando la Licenciatura en Música y la Licenciatura en Educación Musical.</p>
                 <p>Mi objetivo no es solo interpretar una pieza, sino transformar un instante en un recuerdo imborrable, compartiendo la sensibilidad de la voz humana tanto en los escenarios como a través de la pedagogía musical.</p>
+                <button class="cta-button btn-play-global" style="margin: 8vh auto">
+                    Escuchar mi voz
+                </button>
             </div>
         </div>
     </section>
@@ -101,9 +119,11 @@
             <div class="footer-col links">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="sobre-mi.html">Sobre mí</a></li>
                     <li><a href="#servicios.html">Servicios</a></li>
                     <li><a href="detalles_clases.html">Clases de Canto</a></li>
+                    <li><a href="mi-voz.html">Mi Voz</a></li>
                     <li><a href="index.html#contacto">Contacto</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
@@ -112,7 +132,7 @@
             <div class="footer-col contact-info">
                 <h4>Contacto</h4>
                 <ul>
-                    <li>📍 Ciudad de México, México</li>
+                    <li>📍 Xalapa, Veracruz, México</li>
                     <li><a href="mailto:dianalaraoperasinger@gmail.com">dianalaraoperasinger@gmail.com</a></li>
                     <li>📞 +52 477 704 4262</li>
                 </ul>
@@ -121,8 +141,14 @@
             <div class="footer-col social">
                 <h4>Sígueme</h4>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/diana.lara.a" target="_blank">Instagram</a>
-                    <a href="https://www.facebook.com/diana.lara.77736/?locale=es_LA" target="_blank">Facebook</a>
+                    <div class="social-link">
+                        <img src="img/instagram.png" alt="instagram logo">
+                        <a href="https://www.instagram.com/diana.lara.a" target="_blank">Instagram</a>
+                    </div>
+                    <div class="social-link">
+                        <img src="img/facebook.png" alt="facebook logo">
+                        <a href="https://www.facebook.com/diana.lara.77736/?locale=es_LA" target="_blank">Facebook</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -134,6 +160,10 @@
             </div>
         </div>
     </footer>
+
+    <a href="https://wa.me/524777044262?text=Hola%20Diana%2C%20vengo%20de%20tu%20sitio%20web.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20para%20eventos%20y%20clases%20de%20canto.%20%C2%A1Gracias!" class="whatsapp-float" target="_blank" title="Contáctame por WhatsApp">
+        <img src="img/icon_whatsapp.png" alt="WhatsApp" class="wa-icon">
+    </a>
 
     <script src="script.js"></script>
 </body>

@@ -6,20 +6,32 @@
     <title>Diana Lara - Soprano</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="style_optimized.css">
 </head>
 <body>
-
+    <!-- Lecteur Audio Global -->
+    <audio id="voz-audio" loop>
+        <source src="audios/audio_fondo.mp3" type="audio/mpeg">
+    </audio>
     <header>
         <a href="#home" class="logo">Diana Lara</a>
-        <nav>
+        <nav id="main-nav" style="display: flex; align-items: center;">
+            <button id="audio-toggle-header" class="audio-toggle hidden-audio-btn">
+                <img src="img/pausa.png" alt="pausa" class="audio-icon-img">
+            </button>
             <a href="sobre-mi.html">Sobre mi</a>
             <a href="servicios.html">Servicios</a>
             <a href="detalles-clases.html">Clases</a> 
-            <a href="#mi-voz">Mi voz</a>
+            <a href="mi-voz.html">Mi voz</a>
             <a href="#contacto" id="contact-btn">Contáctame</a>
         </nav>
+        
+        <button id="burger-menu-btn" class="burger-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <section id="home">
@@ -49,6 +61,9 @@
                 <br>
                 
                 <a href="sobre-mi.html" class="cta-button outline">Saber más sobre mí</a>
+                <button class="cta-button btn-play-global">
+                    Escuchar mi voz
+                </button>
             </div>
         </div>
     </section>
@@ -141,11 +156,15 @@
                 <h2>Mi Voz</h2>
                 <h3 class="accent-text" style="color: var(--color-plum); font-size: 1.8rem;">Siente la música</h3>
                 <p>Sumérgete en la estética y emoción de mis interpretaciones. Cada nota está diseñada para transmitir elegancia y crear atmósferas únicas en tus eventos.</p>
+                <a href="mi-voz.html" class="cta-button outline" style="margin-top: 5vh;">Mi Repertorio</a>
             </div>
-            <div class="text-col reveal delay-2">
+            <div class="text-col reveal delay-2" style="display: flex; flex-direction: column; justify-content: center;">
                 <div class="image-blob alt-blob" style="background: linear-gradient(135deg, var(--color-coral), var(--color-peach));">
-                    [Reproductor Spotify / Video]
+                    <img src="img/imagen3.jpg" alt="" height="100%">
                 </div>
+                <button class="cta-button btn-play-global" style="margin: 4vh auto;">
+                    Escuchar mi voz
+                </button>
             </div>
         </div>
     </section>
@@ -163,13 +182,16 @@
                         <button type="button" class="toggle-btn" data-value="clases">Clases</button>
                     </div>
                     <div class="input-group">
-                        <input type="text" placeholder="Tu Nombre Completo" required>
+                        <input type="text" name="nombre" placeholder="Tu Nombre Completo" required>
                     </div>
                     <div class="input-group">
-                        <input type="email" placeholder="Tu Correo Electrónico" required>
+                        <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
                     </div>
                     <div class="input-group">
-                        <textarea placeholder="Cuéntame sobre tu evento o tu interés en las clases..." rows="5" required></textarea>
+                        <input type="number" name="Teléfono" placeholder="Tu Numero Telefónico" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea name="mensaje" placeholder="Cuéntame sobre tu evento..." rows="5" required></textarea>
                     </div>
                     <button type="submit" class="cta-button" style="width: 100%; border-radius: 8px;">Enviar Mensaje</button>
                 </form>
@@ -188,9 +210,11 @@
             <div class="footer-col links">
                 <h4>Enlaces Rápidos</h4>
                 <ul>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="sobre-mi.html">Sobre mí</a></li>
                     <li><a href="#servicios.html">Servicios</a></li>
                     <li><a href="detalles_clases.html">Clases de Canto</a></li>
+                    <li><a href="mi-voz.html">Mi Voz</a></li>
                     <li><a href="index.html#contacto">Contacto</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
@@ -199,7 +223,7 @@
             <div class="footer-col contact-info">
                 <h4>Contacto</h4>
                 <ul>
-                    <li>📍 Ciudad de México, México</li>
+                    <li>📍 Xalapa, Veracruz, México</li>
                     <li><a href="mailto:dianalaraoperasinger@gmail.com">dianalaraoperasinger@gmail.com</a></li>
                     <li>📞 +52 477 704 4262</li>
                 </ul>
@@ -208,8 +232,14 @@
             <div class="footer-col social">
                 <h4>Sígueme</h4>
                 <div class="social-links">
-                    <div class="social-link"><img src="img/instagram.png" alt="instagram" height="100%"><a href="https://www.instagram.com/diana.lara.a" target="_blank">  Instagram</a></div>
-                    <div class="social-link"><img src="img/facebook.png" alt="facebook" height="100%"><a href="https://www.facebook.com/diana.lara.77736/?locale=es_LA" target="_blank">  Facebook</a></div>
+                    <div class="social-link">
+                        <img src="img/instagram.png" alt="instagram logo">
+                        <a href="https://www.instagram.com/diana.lara.a" target="_blank">Instagram</a>
+                    </div>
+                    <div class="social-link">
+                        <img src="img/facebook.png" alt="facebook logo">
+                        <a href="https://www.facebook.com/diana.lara.77736/?locale=es_LA" target="_blank">Facebook</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -222,10 +252,19 @@
         </div>
     </footer>
     
-    <a href="https://wa.me/4777044262" class="whatsapp-float" target="_blank" title="Contáctame por WhatsApp">
-        <img src="img/icon_whatsapp2.png" alt="WhatsApp" class="wa-icon" width="100%">
+    <a href="https://wa.me/524777044262?text=Hola%20Diana%2C%20vengo%20de%20tu%20sitio%20web.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20para%20eventos%20y%20clases%20de%20canto.%20%C2%A1Gracias!" class="whatsapp-float" target="_blank" title="Contáctame por WhatsApp">
+        <img src="img/icon_whatsapp.png" alt="WhatsApp" class="wa-icon">
     </a>
 
+    <div id="success-popup" class="success-popup">
+        <div class="popup-content">
+            <button class="close-popup-btn" aria-label="Cerrar">&times;</button>
+            <div class="popup-icon">✓</div>
+            <h3>¡Mensaje Enviado!</h3>
+            <p>Gracias por contactarme. Tu mensaje a llegado con éxito et me pondré en contacto contigo muy pronto.</p>
+        </div>
+    </div>
     <script src="script.js"></script>
+    <script src="script_form.js"></script>
 </body>
 </html>

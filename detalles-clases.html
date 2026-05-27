@@ -6,22 +6,37 @@
     <title>Clases de Canto - Diana Lara</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="style_optimized.css">
+
 </head>
 <body>
-
+    <!-- Lecteur Audio Global -->
+    <audio id="voz-audio" loop>
+        <source src="audios/audio_fondo.mp3" type="audio/mpeg">
+    </audio>
     <header>
         <a href="index.html" class="logo">Diana Lara</a>
-        <nav>
-            <a href="sobre-mi.html">Sobre mi</a>
+        <nav id="main-nav" style="display: flex; align-items: center;">
+            <button id="audio-toggle-header" class="audio-toggle hidden-audio-btn">
+                <img src="img/pausa.png" alt="pausa" class="audio-icon-img">
+            </button>
+            <a href="sobre-mi.html">Sobre mí</a>
             <a href="servicios.html">Servicios</a>
-            <a href="detalles-clases.html">Clases</a> 
-            <a href="index.html#mi-voz">Mi voz</a>
+            <a href="detalles-clases.html" class="nav-active">Clases</a> 
+            <a href="mi-voz.html">Mi voz</a>
             <a href="index.html#contacto" id="contact-btn" data-subject="clases">Contáctame</a>
         </nav>
+        
+        <button id="burger-menu-btn" class="burger-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
-    <section class="page-header" style="padding-top: 120px; background: linear-gradient(180deg, var(--color-cream) 0%, #ffffff 100%);">
+    <section class="page-header" style="padding-top: 220px; background: linear-gradient(180deg, var(--color-cream) 0%, #ffffff 100%);">
         <div class="container">
             <div class="split-layout">
                 <div class="text-col reveal delay-1">
@@ -48,19 +63,19 @@
                     <p>Todos los niveles (Principiantes a Avanzados)</p>
                 </div>
                 <div class="info-badge">
-                    <span class="badge-icon"><img src="img/idiomas.png" alt="idiomas" width="40%"></span>
-                    <h4>Idioma</h4>
-                    <p>Clases en Español (Repertorio en varios idiomas)</p>
+                    <span class="badge-icon"><img src="img/edades.png" alt="edades" width="40%"></span>
+                    <h4>Edades</h4>
+                    <p>Clases para todas las edades</p>
                 </div>
                 <div class="info-badge">
                     <span class="badge-icon"><img src="img/ubi.png" alt="lugar" width="40%"></span>
                     <h4>Lugar</h4>
-                    <p>Online y Presencial (Ciudad de México)</p>
+                    <p>Online y Presencial (Xalapa, Veracruz)</p>
                 </div>
                 <div class="info-badge">
                     <span class="badge-icon"><img src="img/tiempo.png" alt="duracion" width="40%"></span>
                     <h4>Duración</h4>
-                    <p>55 minutos por sesión</p>
+                    <p>1 hora por sesión</p>
                 </div>
             </div>
         </div>
@@ -91,67 +106,144 @@
         </div>
     </section>
 
-    <section class="container reveal" style="padding-top: 80px; padding-bottom: 60px;">
-        <div class="pricing-card">
-            <div class="pricing-content">
-                <h2>Inversión en tu voz</h2>
-                <p style="margin-bottom: 30px; font-size: 1.1rem; color: #555;">Elige la opción que mejor se adapte a tu ritmo y compromiso.</p>
+    <section id="agenda-prueba" style="padding-top: 80px; padding-bottom: 80px;">
+        <div class="container reveal">
+            <div class="promo-agenda-container vertical">
                 
-                <div class="tarifas-flex">
-                    <div class="tarifa-item">
-                        <h4>Clase Suelta</h4>
-                        <span class="precio">$XXX <span>MXN</span></span>
-                        <p>Ideal para probar o prepararte para una audición puntual.</p>
-                    </div>
-                    <div class="tarifa-item tarifa-destacada">
-                        <div class="etiqueta">Más popular</div>
-                        <h4>Paquete 4 Clases</h4>
-                        <span class="precio">$XXXX <span>MXN</span></span>
-                        <p>Pago mensual. La mejor forma de ver un progreso real y constante.</p>
+                <div class="promo-details">
+                    <span class="accent-text" style="font-size: 2.2rem; color: var(--color-peach);">Tu primer paso</span>
+                    <h2 style="text-align: left; margin-bottom: 15px; color: var(--text-light);">Clase de Prueba</h2>
+                    
+                    <p style="color: rgba(253, 244, 236, 0.9); margin-bottom: 25px; font-size: 1.05rem; max-width: 800px;">
+                        Descubre el potencial de tu voz sin ningún compromiso. Elige el horario que mejor te acomode en el calendario de abajo para agendar tu primera sesión de diagnóstico.
+                    </p>
+                    
+                    <div class="price-showcase">
+                        <div class="price-item regular">
+                            <span class="label">Precio regular</span>
+                            <span class="amount" style="opacity: 0.7;">$250 <span>/h</span></span>
+                        </div>
+                        <div class="price-item regular">
+                            <span class="label">Precio grupal</span>
+                            <span class="amount">$900 <span>/4h</span></span>
+                        </div>
+                        <div class="price-item free">
+                            <span class="label">Clase de prueba</span>
+                            <span class="amount">GRATIS</span>
+                        </div>
                     </div>
                 </div>
-                
-                <div style="margin-top: 40px; text-align: center;">
-                    <a href="index.html#contacto" class="cta-button" data-subject="clases">Agendar mi primera clase</a>
+
+                <div class="agenda-embed full-width">
+                    <!-- Google Calendar Appointment Scheduling begin -->
+<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2AYEd-sqcvroAhuqQ0dIq_mcKck-Udb-YxWnZE-OkK_fC41uKoElBacuUgzhYQY0Z9f7uo_yH7?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+<!-- end Google Calendar Appointment Scheduling -->
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="testimonios" class="bg-gradient-reverse" style="padding-top: 80px; padding-bottom: 100px;">
-        <div class="container">
-            <h2 class="reveal">Lo que dicen mis alumnos</h2>
-            <h3 class="accent-text reveal delay-1" style="text-align: center; margin-bottom: 40px; font-size: 2.2rem;">Historias de crecimiento</h3>
+    <section id="testimonios-section" style="background-color: var(--color-cream); overflow: hidden; padding: 80px 0;">
+        <div class="container reveal">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <span class="accent-text" style="font-size: 2rem; color: var(--color-plum);">Lo que dicen de mí</span>
+                <h2>Testimonios</h2>
+            </div>
+        </div>
+    
+        <div class="marquee-wrapper">
             
-            <div class="testimonios-grid">
-                <div class="testimonio-card reveal delay-1">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonio-texto">Diana me ayudó a perder el miedo a cantar en público. Su paciencia es increíble y en solo un par de meses he notado un cambio enorme en mi respiración y afinación.</p>
-                    <div class="alumno-info">
-                        <strong>— María G.</strong>
-                        <span>Alumna presencial</span>
-                    </div>
-                </div>
-                
-                <div class="testimonio-card reveal delay-2">
-                    <div class="quote-icon">"</div>
-                    <p class="testimonio-texto">Las clases online son igual de efectivas. Diana se adapta a mis gustos musicales pero siempre asegurándose de que mi técnica sea sana. ¡Totalmente recomendada!</p>
-                    <div class="alumno-info">
-                        <strong>— Roberto A.</strong>
-                        <span>Alumno online</span>
-                    </div>
+            <div class="marquee-row row-left">
+                <div class="marquee-track">
+                    <div class="testimonial-card"><h3>Jose</h3><p>"¡Perfecto! Súper claras sus explicaciones, además de muy amable en cada clase, 1000/10"</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Martin</h3><p>"Es una excelente maestra, muy centrada y con mucha atención al detalle. Me ha ayudado con lo que necesito y me ha hecho mejorar desde la primera semana. ¡Estoy muy contento con sus clases!"</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Claudio</h3><p>"Es una excelente maestra con mucha paciencia, buen método de enseñanza y organizada, muy recomendada :)"</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Kenya</h3><p>"Diana ha sido muy atenta durante mis clases, brindándome un espacio de confianza y de apoyo. Cada clase me siento contenta y con mucho ánimo de seguir aprendiendo, además de que brinda diversas herramientas para fortalecer mi aprendizaje."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Elena G.</h3><p>"Su enfoque en la salud vocal me ayudó a no cansarme al cantar en el coro."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    
+                    <div class="testimonial-card"><h3>Jose</h3><p>"¡Perfecto! Súper claras sus explicaciones, además de muy amable en cada clase, 1000/10"</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Martin</h3><p>"Es una excelente maestra, muy centrada y con mucha atención al detalle. Me ha ayudado con lo que necesito y me ha hecho mejorar desde la primera semana. ¡Estoy muy contento con sus clases!"</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Claudio</h3><p>"Es una excelente maestra con mucha paciencia, buen método de enseñanza y organizada, muy recomendada :)"</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Kenya</h3><p>"Diana ha sido muy atenta durante mis clases, brindándome un espacio de confianza y de apoyo. Cada clase me siento contenta y con mucho ánimo de seguir aprendiendo, además de que brinda diversas herramientas para fortalecer mi aprendizaje."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Elena G.</h3><p>"Su enfoque en la salud vocal me ayudó a no cansarme al cantar en el coro."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
                 </div>
             </div>
+    
+            <div class="marquee-row row-right" style="margin-top: 25px;">
+                <div class="marquee-track">
+                    <div class="testimonial-card"><h3>Moni</h3><p>"Muy buena maestra, muy paciente y se adapta a tus necesidades/intereses"</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Mario</h3><p>"Las clases con Diana son muy divertidas y una nueva forma de conocer y acercarme a la música y sentir aún más pasión y ganas de aprender al respecto. Además, Diana me ha acompañado con atención y cuidado para sentir más confianza al momento de cantar."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Miguel</h3><p>"Es muy tolerante, explica de diferentes formas de modo que aprendas, de igual forma manejada diferentes estrategias para que el aprendizaje sea muy dinámico."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Barbara P.</h3><p>"Es una maestra talentosa y muy atenta con sus alumnos. Siempre te trata con amabilidad y es muy paciente, además, ayuda a ganar confianza en el canto. Tiene bastantes conocimientos sobre música y canto y busca maneras sencillas de explicar."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Julian</h3><p>"Diana Lara es in profesora que es dedicada, comprometida, una buena orientación y explicación."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    
+                    <div class="testimonial-card"><h3>Moni</h3><p>"Muy buena maestra, muy paciente y se adapta a tus necesidades/intereses"</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Mario</h3><p>"Las clases con Diana son muy divertidas y una nueva forma de conocer y acercarme a la música y sentir aún más pasión y ganas de aprender al respecto. Además, Diana me ha acompañado con atención y cuidado para sentir más confianza al momento de cantar."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Miguel</h3><p>"Es muy tolerante, explica de diferentes formas de modo que aprendas, de igual forma manejada diferentes estrategias para que el aprendizaje sea muy dinámico."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Barbara P.</h3><p>"Es una maestra talentosa y muy atenta con sus alumnos. Siempre te trata con amabilidad y es muy paciente, además, ayuda a ganar confianza en el canto. Tiene bastantes conocimientos sobre música y canto y busca maneras sencillas de explicar."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-card"><h3>Julian</h3><p>"Diana Lara es in profesora que es dedicada, comprometida, una buena orientación y explicación."</p><span class="stars">⭐⭐⭐⭐⭐</span></div>
+                    
+                </div>
+            </div>
+    
         </div>
     </section>
 
     <footer>
-        <div class="footer-bottom" style="text-align: center; padding: 20px;">
-            <p>© 2026 Diana Lara. Todos los derechos reservados.</p>
+        <div class="footer-container">
+            <div class="footer-col brand">
+                <span class="logo">Diana Lara</span>
+                <p class="footer-tagline">Soprano & Coach Vocal</p>
+                <p class="footer-desc">Acompañamiento musical de alta elegancia para tus eventos más significativos y formación vocal profesional.</p>
+            </div>
+            
+            <div class="footer-col links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre-mi.html">Sobre mí</a></li>
+                    <li><a href="#servicios.html">Servicios</a></li>
+                    <li><a href="detalles_clases.html">Clases de Canto</a></li>
+                    <li><a href="mi-voz.html">Mi Voz</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col contact-info">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>📍 Xalapa, Veracruz, México</li>
+                    <li><a href="mailto:dianalaraoperasinger@gmail.com">dianalaraoperasinger@gmail.com</a></li>
+                    <li>📞 +52 477 704 4262</li>
+                </ul>
+            </div>
+            
+            <div class="footer-col social">
+                <h4>Sígueme</h4>
+                <div class="social-links">
+                    <div class="social-link">
+                        <img src="img/instagram.png" alt="instagram logo">
+                        <a href="https://www.instagram.com/diana.lara.a" target="_blank">Instagram</a>
+                    </div>
+                    <div class="social-link">
+                        <img src="img/facebook.png" alt="facebook logo">
+                        <a href="https://www.facebook.com/diana.lara.77736/?locale=es_LA" target="_blank">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Diana Lara. Todos los derechos reservados.</p>
+            <div class="footer-legal">
+                <a href="#">Aviso de Privacidad</a> | <a href="#">Términos de Uso</a>
+            </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/4777044262" class="whatsapp-float" target="_blank" title="Contáctame por WhatsApp">
+    <a href="https://wa.me/524777044262?text=Hola%20Diana%2C%20vengo%20de%20tu%20sitio%20web.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20para%20eventos%20y%20clases%20de%20canto.%20%C2%A1Gracias!" class="whatsapp-float" target="_blank" title="Contáctame por WhatsApp">
         <img src="img/icon_whatsapp.png" alt="WhatsApp" class="wa-icon">
     </a>
 

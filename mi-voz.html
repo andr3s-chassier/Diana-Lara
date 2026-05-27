@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Voz - Diana Lara</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="style_optimized.css">
+
+</head>
+<body>
+
+    <!-- L'élément audio caché -->
+    <audio id="voz-audio" loop>
+        <source src="audios/audio_fondo.mp3" type="audio/mpeg">
+    </audio>
+    <header>
+        <a href="index.html" class="logo">Diana Lara</a>
+        <nav id="main-nav" style="display: flex; align-items: center;">
+            <button id="audio-toggle-header" class="audio-toggle hidden-audio-btn">
+                <img src="img/pausa.png" alt="pausa" class="audio-icon-img">
+            </button>
+            <a href="sobre-mi.html">Sobre mí</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="detalles-clases.html">Clases</a> 
+            <a href="mi-voz.html" class="nav-active">Mi voz</a>
+            <a href="index.html#contacto" id="contact-btn">Contáctame</a>
+        </nav>
+        
+        <button id="burger-menu-btn" class="burger-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-header hero-immersive" style="padding-top: 100px;">
+        <div class="container reveal">
+            <span class="accent-text" style="font-size: 3rem; color: var(--color-peach);">Siente la música</span>
+            <h1 style="font-size: 4rem; color: #fff; margin-bottom: 20px;">Mi Universo Sonoro</h1>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px auto;">
+                Te invito a un recorrido visual y sonoro por mis escenarios. Enciende tus altavoces y déjate llevar.
+            </p>
+            
+            <!-- Ce bouton débloque l'audio et lance le scroll -->
+            <button id="start-experience" class="cta-button" style="background: #fff; color: var(--color-bordeaux);">
+                Comenzar experiencia ➔
+            </button>
+        </div>
+    </section>
+
+    <!-- Section de Scroll Immersif (Grand Format 2 Colonnes) -->
+    <section id="immersive-gallery" class="immersive-scroll-section">
+        <div class="large-gallery-container">
+            
+            <!-- Première Ligne (2 éléments) -->
+            <div class="gallery-row">
+                <!-- Élément 1 (Gauche) -->
+                <div class="slide-item slide-from-left dynamic-shape">
+                    <img src="img/imagen1.jpg" alt="evento 1">
+                    <div class="shape-overlay">
+                        <span class="shape-caption">evento 1</span>
+                    </div>
+                </div>
+
+                <!-- Élément 2 (Droite - légèrement décalé vers le bas) -->
+                <div class="slide-item slide-from-right dynamic-shape offset-down">
+                    <img src="img/imagen2.jpg" alt="Evento 2">
+                    <div class="shape-overlay">
+                        <span class="shape-caption">evento 2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deuxième Ligne (2 éléments) -->
+            <div class="gallery-row">
+                <!-- Élément 3 (Gauche) -->
+                <div class="slide-item slide-from-left dynamic-shape">
+                    <!-- Si tu utilises une vidéo, mets la balise iframe ou video ici -->
+                    <img src="img/imagen3.jpg" alt="Evento 3">
+                    <div class="shape-overlay">
+                        <span class="shape-caption">evento 3</span>
+                    </div>
+                </div>
+
+                <!-- Élément 4 (Droite) -->
+                <div class="slide-item slide-from-right dynamic-shape offset-down">
+                    <img src="img/imagen4.jpg" alt="Evento 4">
+                    <div class="shape-overlay">
+                        <span class="shape-caption">evento 4</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section Slider Flux Vidéo (Version Bulle Animée) -->
+    <section id="video-flow-section" class="blob-slider-section">
+        <h2 style="color: var(--color-peach); margin-bottom: 40px; position: relative; z-index: 5;">Fragmentos en Vivo</h2>
+        <div class="slider-wrapper" id="flow-slider-wrapper">
+            
+            <!-- <div class="scroll-arrow left-arrow" id="scroll-left">❮</div>
+            <div class="scroll-arrow right-arrow" id="scroll-right">❯</div> -->
+
+            <div class="slider-track" id="flow-slider-track">
+                <!-- Vidéo 1 -->
+                <div class="video-item">
+                    <video src="videos/video1.mp4" loop muted playsinline poster="img/galeria-2.jpg"></video>
+                </div>
+                <!-- Vidéo 2 -->
+                <div class="video-item">
+                    <video src="videos/video2.mp4" loop muted playsinline poster="img/galeria-3.jpg"></video>
+                </div>
+                <!-- Vidéo 3 -->
+                <div class="video-item">
+                    <video src="videos/video3.mp4" loop muted playsinline poster="img/galeria-4.jpg"></video>
+                </div>
+                <!-- Vidéo 4 -->
+                <div class="video-item">
+                    <video src="videos/video4.mp4" loop muted playsinline poster="img/imagen1.jpg"></video>
+                </div>
+                <!-- Vidéo 5 -->
+                <div class="video-item">
+                    <video src="videos/video5.mp4" loop muted playsinline poster="img/galeria-2.jpg"></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col brand">
+                <span class="logo">Diana Lara</span>
+                <p class="footer-tagline">Soprano & Coach Vocal</p>
+                <p class="footer-desc">Acompañamiento musical de alta elegancia para tus eventos más significativos y formación vocal profesional.</p>
+            </div>
+            
+            <div class="footer-col links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre-mi.html">Sobre mí</a></li>
+                    <li><a href="#servicios.html">Servicios</a></li>
+                    <li><a href="detalles_clases.html">Clases de Canto</a></li>
+                    <li><a href="mi-voz.html">Mi Voz</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col contact-info">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>📍 Xalapa, Veracruz, México</li>
+                    <li><a href="mailto:dianalaraoperasinger@gmail.com">dianalaraoperasinger@gmail.com</a></li>
+                    <li>📞 +52 477 704 4262</li>
+                </ul>
+            </div>
+            
+            <div class="footer-col social">
+                <h4>Sígueme</h4>
+                <div class="social-links">
+                    <div class="social-link">
+                        <img src="img/instagram.png" alt="instagram logo">
+                        <a href="https://www.instagram.com/diana.lara.a" target="_blank">Instagram</a>
+                    </div>
+                    <div class="social-link">
+                        <img src="img/facebook.png" alt="facebook logo">
+                        <a href="https://www.facebook.com/diana.lara.77736/?locale=es_LA" target="_blank">Facebook</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Diana Lara. Todos los derechos reservados.</p>
+            <div class="footer-legal">
+                <a href="#">Aviso de Privacidad</a> | <a href="#">Términos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/524777044262?text=Hola%20Diana%2C%20vengo%20de%20tu%20sitio%20web.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios%20para%20eventos%20y%20clases%20de%20canto.%20%C2%A1Gracias!" class="whatsapp-float" target="_blank" title="Contáctame por WhatsApp">
+        <img src="img/icon_whatsapp.png" alt="WhatsApp" class="wa-icon">
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
