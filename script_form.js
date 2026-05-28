@@ -41,12 +41,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 3. Fonctions du Popup
+    // 3. Fonctions du Popup
     function openSuccessPopup() {
         if (!successPopup) return;
         successPopup.classList.add('active');
 
-        // Fermeture automatique après 2 secondes max (2000 ms)
-        popupTimer = setTimeout(closeSuccessPopup, 2000);
+        // --- NOUVEAU : FEU D'ARTIFICE DE CONFETTIS ---
+        // On vérifie que la librairie est bien chargée
+        if (typeof confetti === 'function') {
+            var duration = 2000; // Le feu d'artifice dure 2 secondes
+            var end = Date.now() + duration;
+
+            (function frame() {
+                // Canon de gauche
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#AF4D98', '#D66BA0', '#E5A9A9', '#F4E4BA'], // Les couleurs de Diana !
+                    zIndex: 100001 // S'assure qu'ils passent au-dessus du popup
+                });
+                // Canon de droite
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#F4E4BA', '#D66BA0', '#E5A9A9', '#AF4D98'],
+                    zIndex: 100001
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+        // Fermeture automatique après 3 secondes (on laisse le temps d'admirer l'animation !)
+        popupTimer = setTimeout(closeSuccessPopup, 3000);
     }
 
     function closeSuccessPopup() {

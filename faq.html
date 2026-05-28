@@ -14,11 +14,14 @@
 <body>
     <!-- Lecteur Audio Global -->
     <audio id="voz-audio" loop>
-        <source src="audios/audio_fondo.mp3" type="audio/mpeg">
+        <source src="audios/audio_fondo.mp3" type="audio/mp3">
     </audio>
     <header>
         <a href="index.html" class="logo">Diana Lara</a>
         <nav id="main-nav" style="display: flex; align-items: center;">
+            <button id="audio-toggle-header" class="audio-toggle hidden-audio-btn">
+                <img src="img/pausa.png" alt="pausa" class="audio-icon-img">
+            </button>
             <a href="sobre-mi.html">Sobre mí</a>
             <a href="servicios.html">Servicios</a>
             <a href="detalles-clases.html">Clases</a> 

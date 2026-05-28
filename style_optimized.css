@@ -139,7 +139,7 @@ nav a:hover { color: var(--color-primary-dark); }
    6. PAGES : HOME, SERVICIOS, CLASES, EXPERIENCIA, MI VOZ, CONTACTO
    ========================================================================== */
 #home {
-    padding-top: 100px;
+    padding: 0;
     height: 95vh; display: flex; align-items: center;
     background: linear-gradient(to right, #f9efd7ee, #f4e4baef), url('https://via.placeholder.com/1920x1080/E77E6D/FFFFFF') center/cover fixed;
 }
@@ -149,6 +149,7 @@ nav a:hover { color: var(--color-primary-dark); }
 .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
 .split-layout { display: flex; align-items: center; gap: 60px; }
 .split-layout .text-col, .split-layout .img-col { flex: 1; }
+.div-joda { display: flex; justify-content: space-between; margin-top: 20px; width: 90%;}
 /* ==========================================================================
    --- POPUP DE ÉXITO (MODAL) ---
    ========================================================================== */
@@ -566,7 +567,7 @@ nav a:hover { color: var(--color-primary-dark); }
    ========================================================================== */
 .blob-slider-section {
     position: relative; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-    padding: 70px 0; margin: 0vh auto 10vh; width: 95%; max-width: 1800px; overflow: hidden;
+    padding: 70px 0; margin: 0vh auto 0; width: 95%; max-width: 1800px; overflow: hidden;
     box-shadow: 0 20px 60px rgba(85, 18, 33, 0.15); animation: morphSlider 12s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
 }
 @keyframes morphSlider {
@@ -671,7 +672,13 @@ footer { background-color: var(--color-primary-dark); color: var(--color-white);
    ========================================================================== */
 @media (max-width: 850px) {
     html {overflow-x: hidden;}
+    /* section { padding-top: 100px; } */
+    #home {
+        padding: 100px 5%;
+        height: auto;
+    }
     .split-layout { flex-direction: column; text-align: center; gap: 40px; }
+    .div-joda { justify-content: center; flex-direction: column; gap: 20px; }
     h2::after { margin-left: auto; margin-right: auto; }
     .hero-content { text-align: center; }
     .hero-content h1 { font-size: 3.5rem; }
@@ -747,7 +754,8 @@ footer { background-color: var(--color-primary-dark); color: var(--color-white);
         transform: rotate(-45deg) translateY(2px);
     }
     /* --- RESPONSIVE MI VOZ MOBILE --- */
-    .hero-immersive h1 { font-size: 2.8rem; }
+    .hero-immersive { height: auto; padding: 100px 5%;}
+    .hero-immersive h1 { font-size: 2.8rem;}
     .hero-immersive .accent-text { font-size: 2rem; }
     .gallery-row { flex-direction: column; gap: 30px; margin-bottom: 30px; }
     .slide-item { width: 100%; }

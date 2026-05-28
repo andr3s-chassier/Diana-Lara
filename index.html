@@ -12,7 +12,7 @@
 <body>
     <!-- Lecteur Audio Global -->
     <audio id="voz-audio" loop>
-        <source src="audios/audio_fondo.mp3" type="audio/mpeg">
+        <source src="audios/audio_fondo.mp3" type="audio/mp3">
     </audio>
     <header>
         <a href="#home" class="logo">Diana Lara</a>
@@ -125,7 +125,7 @@
             </div>
             <div class="reveal delay-1" style="margin-top: 50px; display: flex; flex-direction: column; align-items: center; gap: 50px;">
             
-                <a href="detalles-clases.html" class="cta-button outline" style="border: #ffffff solid 2px; color: #ffffff;">Ver detalles y horarios completos</a>
+                <a href="detalles-clases.html" class="cta-button outline" style="border: #ffffff solid 2px; color: #ffffff; text-align: center;">Ver detalles y horarios completos</a>
     
                 <!-- <div class="map-container">
                     <h3 style="color: var(--color-peach); font-size: 1.4rem; margin-bottom: 20px; font-weight: 500;">
@@ -144,7 +144,7 @@
                     </div>
                 </div> -->
 
-                <a href="#contacto" class="cta-button" data-subject="clases">Pide tu primera clase</a>
+                <a href="#contacto" class="cta-button" data-subject="clases" style="border: 2px #ffffff solid ;">Pide tu primera clase</a>
     
             </div>
         </div>
@@ -156,17 +156,20 @@
                 <h2>Mi Voz</h2>
                 <h3 class="accent-text" style="color: var(--color-plum); font-size: 1.8rem;">Siente la música</h3>
                 <p>Sumérgete en la estética y emoción de mis interpretaciones. Cada nota está diseñada para transmitir elegancia y crear atmósferas únicas en tus eventos.</p>
-                <a href="mi-voz.html" class="cta-button outline" style="margin-top: 5vh;">Mi Repertorio</a>
             </div>
             <div class="text-col reveal delay-2" style="display: flex; flex-direction: column; justify-content: center;">
                 <div class="image-blob alt-blob" style="background: linear-gradient(135deg, var(--color-coral), var(--color-peach));">
                     <img src="img/imagen3.jpg" alt="" height="100%">
                 </div>
-                <button class="cta-button btn-play-global" style="margin: 4vh auto;">
-                    Escuchar mi voz
-                </button>
             </div>
         </div>
+        <div class="div-joda">
+            <a href="mi-voz.html" class="cta-button outline" style="margin: 0; text-align: center;">Mi Repertorio</a>
+            <button class="cta-button btn-play-global" style="margin: 0;">
+                Escuchar mi voz
+            </button>
+        </div>
+        
     </section>
 
     <section id="contacto" class="bg-gradient-reverse">
@@ -264,6 +267,7 @@
             <p>Gracias por contactarme. Tu mensaje a llegado con éxito et me pondré en contacto contigo muy pronto.</p>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
     <script src="script_form.js"></script>
 </body>
